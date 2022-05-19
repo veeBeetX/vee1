@@ -5,21 +5,80 @@
 	<title>test</title>
 
 	<link rel="stylesheet" href="/css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="/fonts/gotham/stylesheet.css" type="text/css">
 
 	<style>
+		/* css vars */
+		:root {
+			/* base color & opacity */
+			--base_100: rgba(27,20,100,1.0);
+
+			/* base mid & opacity */
+			--base-md_100: rgba(8,6,31,1.0);
+
+			/* base darker & opacity */
+			--base-dk_100: rgba(8,6,31,1.0);
+			--base-dk_50: rgba(8,6,31,0.5);
+			--base-dk_20: rgba(8,6,31,0.2);
+			--base-dk_10: rgba(8,6,31,0.10);
+			--base-dk_05: rgba(8,6,31,0.05);
+			--base-dk_0: rgba(8,6,31,0.0);
+
+			/* base lighter & opacity */
+			--base-lt_100: rgba(46,49,146,1.0);
+
+			/* base hi & opacity -- this is a color in the same range as base but higher spectrum. Useful for alpha layers that are closer to the base than shades of white. @vee */
+			--base-hi-100: rgba(0,255,255,1.0);
+
+
+			--theme1: rgba(204,255,204,1.0);
+			--theme2: rgba(0,248,156,1.0);
+			--theme3: rgba(150,189,150,1.0);
+			--theme4: rgba(255,0,0,1.0);
+
+			--white: rgba(255,255,255,1.0);
+
+			--black: rgba(0,0,0,1.0);
+
+
+			--dkalpha: rgba(0,0,0,0.5);
+			--whalpha: rgba(255,255,255,0.9);
+			--highlightbg: rgba(0,0,0,0.1);
+			--whalpha1: rgba(255,255,255,0.2);
+		
+			--lowLight: rgba(251,251,251,1.0);
+			--hiLight: rgba(245,245,224540,1.0);
+			--mainBG: rgba(255,255,255,1.0);
+			--mdGrey: rgba(188,188,188,1.0);
+			--ltGrey: rgba(210,210,210,1.0);
+
+			--padXL: 10vw;
+			--padL: 7vw;
+			--padM: 4vw;
+			--padS: 2vw;
+			--padXS: 1vw;
+
+
+			--customFont:'gotham';
+		} 
+
 		body {
-			background-color: rgba(27,20,110,1.0);
+			background-color: var(--base_100);
+			font-family:  var(--customFont), 'Inter VF', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			color: var(--white);
+			font-weight: 300;
+			font-size: 16px;
 		}
 
-		header {
+		div.prNav {
 			height:13vh;
 			background-image: linear-gradient(to bottom, 
 			rgba(8,6,31,0.2) 0%, 
 			rgba(8,6,31,0.0) 20%, 
 			rgba(8,6,31,0.05) 50%, 
 			rgba(8,6,31,0.2) 80%, 
-			  rgba(8,6,31,0.5)
-			  );
+			rgba(8,6,31,0.5)
+			);
 		}
 		div.radialSpot {
 			width:100vw;
@@ -38,19 +97,67 @@
 			rgba(8,6,31,1.0)95%, 
 			rgba(8,6,31,1.0)
 			);
-		}	  
+		}	
+		
+		.panel {
+			padding: var(padL);
+			background-color: var(light);
+		}
+
+		div.swatches {
+			border:1px solid var(--whalpha1);
+			padding: var(--padL);
+			display: flex;
+			justify-content: center;
+		}
+		.box {
+			width:10vw;
+			height:10vw;
+			margin: 0;
+		}
+		.box1 {background-color: var(--base-dk_100);}
+		.box2 {background-color: var(--base-dk_50);}
+		.box3 {background-color: var(--base-dk_20);}
+		.box4 {background-color: var(--base-dk_10);}
+		.box5 {background-color: var(--base-dk_05);}
+		.box6 {background-color: var(--base-dk_00);}
 	</style>
+
 </head>
+
 <body class="spookyTown">
 	<div class="radialSpot">
-			<header class="prNav">
-				hi 
-			</header>
-		again
+			<div class="prNav">
+				nav 
+			</div>
+		
+			<div class="swatches">
+				<div class="box box1"></div>
+				<div class="box box2"></div>
+				<div class="box box3"></div>
+				<div class="box box4"></div>
+				<div class="box box5"></div>
+				<div class="box box6"></div>
+			</div>
+
 	</div>
 	<main style="height:3000px;">
 	sppoky test elements 
-</main>
+
+		<div class="panel">
+			<h1>Header 1 - Lorem ipsum</h1>
+			<h2>Header 2 - Lorem ipsum</h2>
+			<h3>Header 3 - Lorem ipsum</h3>
+			<h4>Header 4 - Lorem ipsum</h4>
+			<h5>Header 5 - Lorem ipsum</h5>
+			<h6>Header 6 - Lorem ipsum</h6>
+
+			<p><strong>Nisi mollit est irure aliquip ipsum dolor velit fugiat enim ad minim sit.</strong></p>
+
+			<p>Nisi mollit est irure aliquip ipsum dolor velit fugiat enim ad minim sit. Fugiat adipisicing veniam reprehenderit nulla officia nulla ea exercitation laboris occaecat sint irure ipsum do. Occaecat anim ea voluptate non dolore duis. Id duis Lorem voluptate duis sint exercitation deserunt ut deserunt. Veniam amet duis dolor commodo. Anim esse voluptate esse nisi dolor nulla. Ut enim elit nulla Lorem velit deserunt ea quis ea eiusmod deserunt velit.</p>
+		</div>
+
+	</main>
 	
 </body>
 </html>
