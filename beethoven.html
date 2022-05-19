@@ -128,13 +128,23 @@
 			--webFont:'gotham';
 		} 
 
+		html {
+			font-size: 16px;
+		}
+		@media screen and (max-width:1000px) {
+			html {
+				font-size: 13px;
+			}
+		}
+
 		body {
 			background-color: var(--base_100);
 			font-family:  var(--webFont), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 			color: var(--white_100);
 			font-weight: 300;
-			font-size: 16px;
 		}
+
+
 
 		div.prNav {
 			height:20vh;
@@ -191,6 +201,8 @@
 
 		h1,h2,h3,h4,h5,h6 {
 			line-height: 100%;
+		}strong {
+			font-weight: 700;
 		}
 
 		p, a {
@@ -198,14 +210,20 @@
 			font-weight: 200;
 			font-size: 0.85rem;
 		}
-		strong {
-			font-weight: 700;
+		@media screen and (max-width:1000px) {
+			p, a {
+				font-size: 1.15rem;
+			}
 		}
+		
 		a:link, a:visited {
 			color: var(--theme2_100);
 		}
-		a:hover, a:active {
-			color: var(--theme4_100);
+		@media screen and (pointer:fine) {
+			a:hover, a:active {
+				transition: 0.25s;
+				color: var(--theme4_100);
+			}
 		}
 		a:not(p a) {
 			font-weight: 700;
