@@ -192,17 +192,38 @@
 		h1,h2,h3,h4,h5,h6 {
 			line-height: 100%;
 		}
+		strong {
+			font-weight: 700;
+		}
 		h1 {
-			font-size: 4rem;
+			font-size: 3.6rem;
 			letter-spacing: -0.1rem;
-			color: var(--theme2);
+			color: var(--theme2_100);
 		}
-		h1 span {
-			color: var(--theme4);
+		h2 {
+			font-size: 2.7rem;
+			font-weight: 300;
+			letter-spacing: -0.1rem;
+			color: var(--theme2_100);
+		}
+		h3, h4 {
+			font-size: 1.8rem;
+			font-weight: 300;
+			letter-spacing: -0.05rem;
+			line-height: 115%;
+			color: var(--white_100);
 		}
 
 
 
+
+		h1 span, h2 span, h4 span, h6 span {
+			color: var(--theme4_100);
+		}
+		
+		h3 span, h5 span {
+			color: var(--theme2_100);
+		}
 
 
 		hr {
@@ -388,11 +409,11 @@
 
 		<div class="panel">
 			<h1>Header 1 -<br> Lorem <span>ipsum</span></h1>
-			<h2>Header 2 - Lorem ipsum</h2>
-			<h3>Header 3 - Lorem ipsum</h3>
-			<h4>Header 4 - Lorem ipsum</h4>
-			<h5>Header 5 - Lorem ipsum</h5>
-			<h6>Header 6 - Lorem ipsum</h6>
+			<h2>Header 2 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h2>
+			<h3>Header 3 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h3>
+			<h4>Header 4 - Lorem <span>ipsum</span><br><strong>Same typesetting as h3 - but span color variant <span>ipsum dolor</span></strong></h4>
+			<h5>Header 5 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h5>
+			<h6>Header 6 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h6>
 
 			<p><strong>Nisi mollit est irure aliquip ipsum dolor velit fugiat enim ad minim sit.</strong></p>
 
