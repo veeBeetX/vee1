@@ -192,7 +192,22 @@
 		h1,h2,h3,h4,h5,h6 {
 			line-height: 100%;
 		}
+
+		p, a {
+			line-height: 150%;
+			font-weight: 200;
+			font-size: 0.85rem;
+		}
 		strong {
+			font-weight: 700;
+		}
+		a:link, a:visited {
+			color: var(--theme2_100);
+		}
+		a:hover, a:active {
+			color: var(--theme4_100);
+		}
+		a:not(p a) {
 			font-weight: 700;
 		}
 		h1 {
@@ -213,14 +228,16 @@
 			line-height: 115%;
 			color: var(--white_100);
 		}
-
-
-
-
+		h5, h6 {
+			font-size: 1.2rem;
+			font-weight: 300;
+			letter-spacing: -0.03rem;
+			line-height: 115%;
+			color: var(--white_100);
+		}
 		h1 span, h2 span, h4 span, h6 span {
 			color: var(--theme4_100);
-		}
-		
+		}		
 		h3 span, h5 span {
 			color: var(--theme2_100);
 		}
@@ -413,11 +430,14 @@
 			<h3>Header 3 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h3>
 			<h4>Header 4 - Lorem <span>ipsum</span><br><strong>Same typesetting as h3 - but span color variant <span>ipsum dolor</span></strong></h4>
 			<h5>Header 5 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h5>
-			<h6>Header 6 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h6>
+			<h6>Header 6 - Lorem <span>ipsum</span><br><strong>Same typesetting as h5 - but span color variant  <span>ipsum dolor</span></strong></h6>
+			--<br><br>
+			<p><strong>Paragraph styling. Nisi mollit est irure aliquip ipsum dolor velit fugiat enim ad minim sit.</strong></p>
 
-			<p><strong>Nisi mollit est irure aliquip ipsum dolor velit fugiat enim ad minim sit.</strong></p>
+			<p><strong>Nisi mollit est irure</strong> aliquip ipsum dolor velit fugiat enim ad minim sit. <a href="/">inline link stying</a> Fugiat adipisicing veniam reprehenderit nulla officia nulla ea exercitation laboris occaecat sint irure ipsum do. Occaecat anim ea voluptate non dolore duis. Id duis Lorem voluptate duis sint exercitation deserunt ut deserunt. Veniam amet duis dolor commodo. <span>Span inline for subtle highlight</span> Anim esse voluptate esse nisi dolor nulla. Ut enim elit nulla Lorem velit deserunt ea quis ea eiusmod deserunt velit.</p>
 
-			<p>Nisi mollit est irure aliquip ipsum dolor velit fugiat enim ad minim sit. Fugiat adipisicing veniam reprehenderit nulla officia nulla ea exercitation laboris occaecat sint irure ipsum do. Occaecat anim ea voluptate non dolore duis. Id duis Lorem voluptate duis sint exercitation deserunt ut deserunt. Veniam amet duis dolor commodo. Anim esse voluptate esse nisi dolor nulla. Ut enim elit nulla Lorem velit deserunt ea quis ea eiusmod deserunt velit.</p>
+			<a href="/">Basic inline link - outside para</a>
+
 		</div>
 
 	</main>
