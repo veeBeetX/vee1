@@ -19,6 +19,14 @@
 			--base_05: rgba(27,20,100,0.05);
 			--base_0: rgba(27,20,100,0.0);
 
+			/* base lighter & opacity */
+			--base-lt_100: rgba(46,49,146,1.0);
+			--base-lt_50: rgba(46,49,146,0.5);
+			--base-lt_20: rgba(46,49,146,0.2);
+			--base-lt_10: rgba(46,49,146,0.1);
+			--base-lt_05: rgba(46,49,146,0.05);
+			--base-lt_0: rgba(46,49,146,0);
+
 			/* base mid & opacity */
 			--base-md_100: rgba(8,6,31,1.0);
 			--base-md_50: rgba(8,6,31,0.5);
@@ -35,16 +43,16 @@
 			--base-dk_05: rgba(8,6,31,0.05);
 			--base-dk_0: rgba(8,6,31,0.0);
 
-			/* base lighter & opacity */
-			--base-lt_100: rgba(46,49,146,1.0);
-			--base-lt_50: rgba(46,49,146,0.5);
-			--base-lt_20: rgba(46,49,146,0.2);
-			--base-lt_10: rgba(46,49,146,0.1);
-			--base-lt_05: rgba(46,49,146,0.05);
-			--base-lt_0: rgba(46,49,146,0);
 
-			/* base hi & opacity -- this is a color in the same range as base but higher spectrum. Useful for alpha layers that are closer to the base than shades of white. @vee */
-			--base-hi-100: rgba(0,255,255,1.0);
+
+			/* base hi & opacity -- this is a color in the same range as base but brighter spectrum. 
+			Useful for alpha layers that are closer to the base than shades of white. @vee */
+			--base-hi_100: rgba(0,255,255,1.0);
+			--base-hi_50: rgba(0,255,255,0.5);
+			--base-hi_20: rgba(0,255,255,0.2);
+			--base-hi_10: rgba(0,255,255,0.1);
+			--base-hi_05: rgba(0,255,255,0.05);
+			--base-hi_0: rgba(0,255,255,0);
 
 
 			--theme1: rgba(204,255,204,1.0);
@@ -114,29 +122,28 @@
 			);
 		}	
 		
-		.panel {
+		div.panel {
 			padding: var(--padM);
 			padding-top: calc(var(--padM)*0.5);
 			background-color: var(--whalpha1);
 		}
-
-		div.swatches {
+		div.stage {
 			border:1px solid var(--whalpha1);
 			padding: var(--padL);
+		}
+		div.swatches {
 			display: flex;
 			justify-content: center;
+			margin-bottom: 5px;
 		}
 		.box {
 			width:10vw;
-			height:10vw;
+			height:5vw;
 			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
-		.box1 {background-color: var(--base-dk_100);}
-		.box2 {background-color: var(--base-dk_50);}
-		.box3 {background-color: var(--base-dk_20);}
-		.box4 {background-color: var(--base-dk_10);}
-		.box5 {background-color: var(--base-dk_05);}
-		.box6 {background-color: var(--base-dk_00);}
 
 		h1,h2,h3,h4,h5,h6 {
 			line-height: 100%;
@@ -148,6 +155,14 @@
 		}
 		h1 span {
 			color: var(--theme4);
+		}
+
+
+
+
+
+		hr {
+			border-color: var(--base-hi_20);
 		}
 
 
@@ -165,15 +180,93 @@
 			<div class="prNav">
 				nav 
 			</div>
+			<style>
+					div.swatches.base .box1 {background-color: var(--base_100);}
+					div.swatches.base .box2 {background-color: var(--base_50);}
+					div.swatches.base .box3 {background-color: var(--base_20);}
+					div.swatches.base .box4 {background-color: var(--base_10);}
+					div.swatches.base .box5 {background-color: var(--base_05);}
+					div.swatches.base .box6 {background-color: var(--base_00);}
+
+					div.swatches.hi .box1 {background-color: var(--base-hi_100);}
+					div.swatches.hi .box2 {background-color: var(--base-hi_50);}
+					div.swatches.hi .box3 {background-color: var(--base-hi_20);}
+					div.swatches.hi .box4 {background-color: var(--base-hi_10);}
+					div.swatches.hi .box5 {background-color: var(--base-hi_05);}
+					div.swatches.hi .box6 {background-color: var(--base-hi_00);}
+
+					div.swatches.lt .box1 {background-color: var(--base-lt_100);}
+					div.swatches.lt .box2 {background-color: var(--base-lt_50);}
+					div.swatches.lt .box3 {background-color: var(--base-lt_20);}
+					div.swatches.lt .box4 {background-color: var(--base-lt_10);}
+					div.swatches.lt .box5 {background-color: var(--base-lt_05);}
+					div.swatches.lt .box6 {background-color: var(--base-lt_00);}
+
+					div.swatches.md .box1 {background-color: var(--base-md_100);}
+					div.swatches.md .box2 {background-color: var(--base-md_50);}
+					div.swatches.md .box3 {background-color: var(--base-md_20);}
+					div.swatches.md .box4 {background-color: var(--base-md_10);}
+					div.swatches.md .box5 {background-color: var(--base-md_05);}
+					div.swatches.md .box6 {background-color: var(--base-md_00);}
+
+					div.swatches.dk .box1 {background-color: var(--base-dk_100);}
+					div.swatches.dk .box2 {background-color: var(--base-dk_50);}
+					div.swatches.dk .box3 {background-color: var(--base-dk_20);}
+					div.swatches.dk .box4 {background-color: var(--base-dk_10);}
+					div.swatches.dk .box5 {background-color: var(--base-dk_05);}
+					div.swatches.dk .box6 {background-color: var(--base-dk_00);}
+
+
+			</style>
 
 			<div class="stage">
-				<div class="swatches">
-					<div class="box box1"></div>
-					<div class="box box2"></div>
-					<div class="box box3"></div>
-					<div class="box box4"></div>
-					<div class="box box5"></div>
-					<div class="box box6"></div>
+				<h3>Base Color, Tints & Opacity ranges</h3>
+				<hr>
+
+				<p>Highlight Source Color - Cyan</p>
+				<div class="swatches hi">
+					<div class="box box1">100%</div>
+					<div class="box box2">50%</div>
+					<div class="box box3">20%</div>
+					<div class="box box4">10%</div>
+					<div class="box box5">5%</div>
+					<div class="box box6">0</div>
+				</div>
+				<p>Base &gt; Light Tint</p>
+				<div class="swatches lt">
+					<div class="box box1">100%</div>
+					<div class="box box2">50%</div>
+					<div class="box box3">20%</div>
+					<div class="box box4">10%</div>
+					<div class="box box5">5%</div>
+					<div class="box box6">0</div>
+				</div>
+				<p>Base Color</p>
+				<div class="swatches base">
+					<div class="box box1">100%</div>
+					<div class="box box2">50%</div>
+					<div class="box box3">20%</div>
+					<div class="box box4">10%</div>
+					<div class="box box5">5%</div>
+					<div class="box box6">0</div>
+				</div>
+				<p>Base &gt; Mid Tint</p>
+				<div class="swatches md">
+					<div class="box box1">100%</div>
+					<div class="box box2">50%</div>
+					<div class="box box3">20%</div>
+					<div class="box box4">10%</div>
+					<div class="box box5">5%</div>
+					<div class="box box6">0</div>
+				</div>
+				<p>Base &gt; Dark Tint</p>
+				<div class="swatches dk">
+					<div class="box box1">100%</div>
+					<div class="box box2">50%</div>
+					<div class="box box3">20%</div>
+					<div class="box box4">10%</div>
+					<div class="box box5">5%</div>
+					<div class="box box6">0</div>
 				</div>
 			</div>
 	</div>
