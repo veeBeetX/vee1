@@ -12,74 +12,84 @@
 		/* css vars */
 		:root {
 			/* base color & opacity */
-			--base_100: rgba(27,20,100,1.0);
-			--base_50: rgba(27,20,100,0.5);
-			--base_20: rgba(27,20,100,0.2);
-			--base_10: rgba(27,20,100,0.1);
-			--base_05: rgba(27,20,100,0.05);
-			--base_0: rgba(27,20,100,0.0);
+			--base: 27,20,100;
+			--base_100: rgba(var(--base),1.0);
+			--base_50: rgba(var(--base),0.5);
+			--base_20: rgba(var(--base),0.2);
+			--base_10: rgba(var(--base),0.1);
+			--base_05: rgba(var(--base),0.05);
+			--base_0: rgba(var(--base),0.0);
 
 			/* base lighter & opacity */
-			--base-lt_100: rgba(46,49,146,1.0);
-			--base-lt_50: rgba(46,49,146,0.5);
-			--base-lt_20: rgba(46,49,146,0.2);
-			--base-lt_10: rgba(46,49,146,0.1);
-			--base-lt_05: rgba(46,49,146,0.05);
-			--base-lt_0: rgba(46,49,146,0);
+			--base-lt: 46,49,146;
+			--base-lt_100: rgba(var(--base-lt),1.0);
+			--base-lt_50: rgba(var(--base-lt),0.5);
+			--base-lt_20: rgba(var(--base-lt),0.2);
+			--base-lt_10: rgba(var(--base-lt),0.1);
+			--base-lt_05: rgba(var(--base-lt),0.05);
+			--base-lt_0: rgba(var(--base-lt),0);
 
 			/* base mid & opacity */
-			--base-md_100: rgba(8,6,31,1.0);
-			--base-md_50: rgba(8,6,31,0.5);
-			--base-md_20: rgba(8,6,31,0.2);
-			--base-md_10: rgba(8,6,31,0.1);
-			--base-md_05: rgba(8,6,31,0.05);
-			--base-md_0: rgba(8,6,31,0.0);
+			--base-md: 8,6,31;
+			--base-md_100: rgba(var(--base-md),1.0);
+			--base-md_50: rgba(var(--base-md),0.5);
+			--base-md_20: rgba(var(--base-md),0.2);
+			--base-md_10: rgba(var(--base-md),0.1);
+			--base-md_05: rgba(var(--base-md),0.05);
+			--base-md_0: rgba(var(--base-md),0.0);
 
 			/* base darker & opacity */
-			--base-dk_100: rgba(8,6,31,1.0);
-			--base-dk_50: rgba(8,6,31,0.5);
-			--base-dk_20: rgba(8,6,31,0.2);
-			--base-dk_10: rgba(8,6,31,0.10);
-			--base-dk_05: rgba(8,6,31,0.05);
-			--base-dk_0: rgba(8,6,31,0.0);
+			--base-dk: 8,6,31;
+			--base-dk_100: rgba(var(--base-dk),1.0);
+			--base-dk_50: rgba(var(--base-dk),0.5);
+			--base-dk_20: rgba(var(--base-dk),0.2);
+			--base-dk_10: rgba(var(--base-dk),0.10);
+			--base-dk_05: rgba(var(--base-dk),0.05);
+			--base-dk_0: rgba(var(--base-dk),0.0);
 
 			/* base hi & opacity -- this is a color in the same range as base but brighter spectrum. 
 			Useful for alpha layers that are closer to the base than shades of white. @vee */
-			--base-hi_100: rgba(0,255,255,1.0);
-			--base-hi_50: rgba(0,255,255,0.5);
-			--base-hi_20: rgba(0,255,255,0.2);
-			--base-hi_10: rgba(0,255,255,0.1);
-			--base-hi_05: rgba(0,255,255,0.05);
-			--base-hi_0: rgba(0,255,255,0);
+			--base-hi: 0,255,255;
+			--base-hi_100: rgba(var(--base-hi),1.0);
+			--base-hi_50: rgba(var(--base-hi),0.5);
+			--base-hi_20: rgba(var(--base-hi),0.2);
+			--base-hi_10: rgba(var(--base-hi),0.1);
+			--base-hi_05: rgba(var(--base-hi),0.05);
+			--base-hi_0: rgba(var(--base-hi),0);
 
 			/* brand theme colors for content - alt panelling buttons etc */
-			--theme1_100: rgba(204,255,204,1.0);
-			--theme1_50: rgba(204,255,204,0.5);
-			--theme1_20: rgba(204,255,204,0.2);
-			--theme1_10: rgba(204,255,204,0.1);
-			--theme1_05: rgba(204,255,204,0.05);
-			--theme1_0: rgba(204,255,204,0);
+			--theme1: 204,255,204;
+			--theme1_100: rgba(var(--theme1),1.0);
+			--theme1_50: rgba(var(--theme1),0.5);
+			--theme1_20: rgba(var(--theme1),0.2);
+			--theme1_10: rgba(var(--theme1),0.1);
+			--theme1_05: rgba(var(--theme1),0.05);
+			--theme1_0: rgba(var(--theme1),0);
 
-			--theme2_100: rgba(0,248,156,1.0);
-			--theme2_50: rgba(0,248,156,0.5);
-			--theme2_20: rgba(0,248,156,0.2);
-			--theme2_10: rgba(0,248,156,0.1);
-			--theme2_05: rgba(0,248,156,0.05);
-			--theme2_0: rgba(0,248,156,0);
+			--theme2: 0,248,156;
+			--theme2_100: rgba(var(--theme2),1.0);
+			--theme2_50: rgba(var(--theme2),0.5);
+			--theme2_20: rgba(var(--theme2),0.2);
+			--theme2_10: rgba(var(--theme2),0.1);
+			--theme2_05: rgba(var(--theme2),0.05);
+			--theme2_0: rgba(var(--theme2),0);
 			
-			--theme3_100: rgba(150,189,150,1.0);
-			--theme3_50: rgba(150,189,150,0.5);
-			--theme3_20: rgba(150,189,150,0.2);
-			--theme3_10: rgba(150,189,150,0.1);
-			--theme3_05: rgba(150,189,150,0.05);
-			--theme3_0: rgba(150,189,150,0);
 
-			--theme4_100: rgba(255,0,0,1.0);
-			--theme4_50: rgba(255,0,0,0.5);
-			--theme4_20: rgba(255,0,0,0.2);
-			--theme4_10: rgba(255,0,0,0.1);
-			--theme4_05: rgba(255,0,0,0.05);
-			--theme4_0: rgba(255,0,0,0);
+			--theme3: 150,189,150;
+			--theme3_100: rgba(var(--theme3),1.0);
+			--theme3_50: rgba(var(--theme3),0.5);
+			--theme3_20: rgba(var(--theme3),0.2);
+			--theme3_10: rgba(var(--theme3),0.1);
+			--theme3_05: rgba(var(--theme3),0.05);
+			--theme3_0: rgba(var(--theme3),0);
+
+			--theme4: 255,0,0;
+			--theme4_100: rgba(var(--theme4),1.0);
+			--theme4_50: rgba(var(--theme4),0.5);
+			--theme4_20: rgba(var(--theme4),0.2);
+			--theme4_10: rgba(var(--theme4),0.1);
+			--theme4_05: rgba(var(--theme4),0.05);
+			--theme4_0: rgba(var(--theme4),0);
 
 
 
@@ -224,8 +234,8 @@
 		}
 		@media screen and (pointer:fine) {
 			a:hover, a:active {
-				transition: 0.25s;
-				color: var(--theme4_100);
+				transition: 0.5s;
+				color: var(--base-hi_100);
 			}
 		}
 		a:not(p a) {
@@ -459,6 +469,14 @@
 			<p><strong>Nisi mollit est irure</strong> aliquip ipsum dolor velit fugiat enim ad minim sit. <a href="/">inline link stying</a> Fugiat adipisicing veniam reprehenderit nulla officia nulla ea exercitation laboris occaecat sint irure ipsum do. Occaecat anim ea voluptate non dolore duis. Id duis Lorem voluptate duis sint exercitation deserunt ut deserunt. Veniam amet duis dolor commodo. <span>Span inline for subtle highlight</span> Anim esse voluptate esse nisi dolor nulla. Ut enim elit nulla Lorem velit deserunt ea quis ea eiusmod deserunt velit.</p>
 
 			<a href="/">Basic inline link - outside para</a>
+
+			--<br><br>
+
+			<button type="button" class="chakra-button css-19eym7p">Connect Wallet<!-- --></button>
+			
+			border-radius 20% on cta
+
+			
 
 		</div>
 
