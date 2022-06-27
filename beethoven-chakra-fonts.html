@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+
+	<link rel="stylesheet" href="/css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="/fonts/Inter/interCustom.css" type="text/css">
+	<link rel="stylesheet" href="/fonts/gotham/stylesheet.css" type="text/css">
+
+	<style>
+		/* css vars */
+		:root {
+			/* base color & opacity */
+			--base: 27,20,100;
+			--base_100: rgba(var(--base),1.0);
+			--base_50: rgba(var(--base),0.5);
+			--base_20: rgba(var(--base),0.2);
+			--base_10: rgba(var(--base),0.1);
+			--base_05: rgba(var(--base),0.05);
+			--base_0: rgba(var(--base),0.0);
+
+			/* base lighter & opacity */
+			--base-lt: 46,49,146;
+			--base-lt_100: rgba(var(--base-lt),1.0);
+			--base-lt_50: rgba(var(--base-lt),0.5);
+			--base-lt_20: rgba(var(--base-lt),0.2);
+			--base-lt_10: rgba(var(--base-lt),0.1);
+			--base-lt_05: rgba(var(--base-lt),0.05);
+			--base-lt_0: rgba(var(--base-lt),0);
+
+			/* base mid & opacity */
+			--base-md: 18,14,68;
+			--base-md_100: rgba(var(--base-md),1.0);
+			--base-md_50: rgba(var(--base-md),0.5);
+			--base-md_20: rgba(var(--base-md),0.2);
+			--base-md_10: rgba(var(--base-md),0.1);
+			--base-md_05: rgba(var(--base-md),0.05);
+			--base-md_0: rgba(var(--base-md),0.0);
+
+			/* base darker & opacity */
+			--base-dk: 8,6,31;
+			--base-dk_100: rgba(var(--base-dk),1.0);
+			--base-dk_50: rgba(var(--base-dk),0.5);
+			--base-dk_20: rgba(var(--base-dk),0.2);
+			--base-dk_10: rgba(var(--base-dk),0.10);
+			--base-dk_05: rgba(var(--base-dk),0.05);
+			--base-dk_0: rgba(var(--base-dk),0.0);
+
+			/* base hi & opacity -- this is a color in the same range as base but brighter spectrum. 
+			Useful for alpha layers that are closer to the base than shades of white. @vee */
+			--base-hi: 0,255,255;
+			--base-hi_100: rgba(var(--base-hi),1.0);
+			--base-hi_50: rgba(var(--base-hi),0.5);
+			--base-hi_20: rgba(var(--base-hi),0.2);
+			--base-hi_10: rgba(var(--base-hi),0.1);
+			--base-hi_05: rgba(var(--base-hi),0.05);
+			--base-hi_0: rgba(var(--base-hi),0);
+
+			/* brand theme colors for content - alt panelling buttons etc */
+			--theme1: 204,255,204;
+			--theme1_100: rgba(var(--theme1),1.0);
+			--theme1_50: rgba(var(--theme1),0.5);
+			--theme1_20: rgba(var(--theme1),0.2);
+			--theme1_10: rgba(var(--theme1),0.1);
+			--theme1_05: rgba(var(--theme1),0.05);
+			--theme1_0: rgba(var(--theme1),0);
+
+			--theme2: 0,248,156;
+			--theme2_100: rgba(var(--theme2),1.0);
+			--theme2_50: rgba(var(--theme2),0.5);
+			--theme2_20: rgba(var(--theme2),0.2);
+			--theme2_10: rgba(var(--theme2),0.1);
+			--theme2_05: rgba(var(--theme2),0.05);
+			--theme2_0: rgba(var(--theme2),0);
+			
+
+			--theme3: 150,189,150;
+			--theme3_100: rgba(var(--theme3),1.0);
+			--theme3_50: rgba(var(--theme3),0.5);
+			--theme3_20: rgba(var(--theme3),0.2);
+			--theme3_10: rgba(var(--theme3),0.1);
+			--theme3_05: rgba(var(--theme3),0.05);
+			--theme3_0: rgba(var(--theme3),0);
+
+			--theme4: 255,0,0;
+			--theme4_100: rgba(var(--theme4),1.0);
+			--theme4_50: rgba(var(--theme4),0.5);
+			--theme4_20: rgba(var(--theme4),0.2);
+			--theme4_10: rgba(var(--theme4),0.1);
+			--theme4_05: rgba(var(--theme4),0.05);
+			--theme4_0: rgba(var(--theme4),0);
+
+
+
+
+			/* basic white / black alpha steps */
+			--white_100: rgba(255,255,255,1.0);
+			--white_75: rgba(255,255,255,0.75);
+			--white_50: rgba(255,255,255,0.50);
+			--white_25: rgba(255,255,255,0.25);
+			--white_15: rgba(255,255,255,0.15);
+			--white_10: rgba(255,255,255,0.10);
+			--white_05: rgba(255,255,255,0.05);
+
+			--black_100: rgba(0,0,0,1.0);
+			--black_75: rgba(0,0,0,0.75);
+			--black_50: rgba(0,0,0,0.50);
+			--black_25: rgba(0,0,0,0.25);
+			--black_15: rgba(0,0,0,0.15);
+			--black_10: rgba(0,0,0,0.1);
+			--black_05: rgba(0,0,0,0.05);
+			
+			/* viewport based padding/margin */
+			--vpXL: 10vw;
+			--vpdL: 7vw;
+			--vpM: 5vw;
+			--vpS: 3vw;
+			--vpXS: 1vw;			
+			--vpXXS: 0.5vw;
+
+			/* micro, static padding/margin values */
+			--u10: 10px;
+			--u09: 9px;
+			--u08: 8px;
+			--u07: 7px;
+			--u06: 6px;
+			--u05: 5px;
+			--u04: 4px;
+			--u03: 3px;
+			--u02: 2px;
+			--u01: 1px;
+
+			/* settings */
+			--buttonRadius: 0.5rem;
+
+			--webFont:'Inter VF', 'Inter'; /* default */
+			--webFont:'gotham';
+		} 
+
+		html {
+			font-size: 16px;
+		}
+		@media screen and (max-width:1000px) {
+			html {
+				font-size: 13px;
+			}
+		}
+
+		body {
+			background-color: var(--base_100);
+			font-family:  var(--webFont), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			color: var(--white_100);
+			font-weight: 300;
+		}
+
+
+
+		div.prNav {
+			height:20vh;
+			background-image: linear-gradient(to bottom, 
+			var(--base-dk_20) 0%, 
+			var(--base-dk_0) 20%, 
+			var(--base-dk_05) 50%, 
+			var(--base-dk_20) 80%, 
+			var(--base-dk_50)
+			);
+		}
+		div.radialSpot {
+			width:100vw;
+			background-color: var(--base-dk_10);
+			background-image: radial-gradient(circle at center, var(--base-dk_0) 50%,  var(--base-dk_100) 110%);
+		}
+
+		.spookyTown {
+			background-image: linear-gradient(to right, 
+			var(--base-dk_100), 
+			var(--base-dk_100) 5%, 
+			var(--base-dk_0) 35%, 
+			var(--base-dk_0) 65%, 
+			var(--base-dk_100) 95%, 
+			var(--base-dk_100)
+			);
+		}	
+
+	
+        p, a {
+			line-height: 150%;
+			font-weight: 200;
+			font-size: 0.85rem;
+		}
+
+        a:link, a:visited {
+			color: var(--theme2_100);
+		}
+        
+
+
+		/* typography
+
+
+        fontSizes: {
+            xs: "0.75rem",
+            sm: "0.875rem",
+            md: "1rem",
+            lg: "1.125rem",
+            xl: "1.25rem",
+            "2xl": "1.5rem",
+            "3xl": "1.875rem",
+            "4xl": "2.25rem",
+            "5xl": "3rem",
+            "6xl": "3.75rem",
+            "7xl": "4.5rem",
+            "8xl": "6rem",
+            "9xl": "8rem",
+        },
+        fontWeights: {
+            hairline: 100,
+            thin: 200,
+            light: 300,
+            normal: 400,
+            medium: 500,
+            semibold: 600,
+            bold: 700,
+            extrabold: 800,
+            black: 900,
+        },
+        lineHeights: {
+            normal: "normal",
+            none: 1,
+            shorter: 1.25,
+            short: 1.375,
+            base: 1.5,
+            tall: 1.625,
+            taller: "2",
+            "3": ".75rem",
+            "4": "1rem",
+            "5": "1.25rem",
+            "6": "1.5rem",
+            "7": "1.75rem",
+            "8": "2rem",
+            "9": "2.25rem",
+            "10": "2.5rem",
+        },
+        letterSpacings: {
+            tighter: "-0.05em",
+            tight: "-0.025em",
+            normal: "0",
+            wide: "0.025em",
+            wider: "0.05em",
+            widest: "0.1em",
+        }, 
+        
+        */
+
+
+
+        h1 {
+			font-size: 3.6rem;
+			letter-spacing: -0.1rem;
+			color: var(--theme2_100);
+		}
+		h2 {
+			font-size: 2.7rem;
+			font-weight: 300;
+			letter-spacing: -0.1rem;
+			color: var(--theme2_100);
+		}
+		h3, h4 {
+			font-size: 1.8rem;
+			font-weight: 300;
+			letter-spacing: -0.05rem;
+			line-height: 115%;
+			color: var(--white_100);
+		}
+		h5, h6 {
+			font-size: 1.2rem;
+			font-weight: 300;
+			letter-spacing: -0.03rem;
+			line-height: 115%;
+			color: var(--white_100);
+		}
+
+
+		/* layout */
+		main, div.prNav, div.stage {
+			padding-left: var(--vpM);
+			padding-right: var(--vpM);
+		}
+
+	</style>
+
+</head>
+
+<body class="spookyTown">
+	
+	<main style="height:3000px;">
+
+        <table>
+            <tr valign="top">
+                <td><div class="panel">
+                    <h1>Header 1 -<br> Lorem <span>ipsum</span></h1>
+                    <h2>Header 2 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h2>
+                    <h3>Header 3 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h3>
+                    <h4>Header 4 - Lorem <span>ipsum</span><br><strong>Same typesetting as h3 - but span color variant <span>ipsum dolor</span></strong></h4>
+                    <h5>Header 5 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></h5>
+                    <h6>Header 6 - Lorem <span>ipsum</span><br><strong>Same typesetting as h5 - but span color variant  <span>ipsum dolor</span></strong></h6>
+                 
+                    <p><strong>Nisi mollit est irure</strong> aliquip ipsum dolor velit fugiat enim ad minim sit. <a href="/">inline link stying</a> Fugiat adipisicing veniam reprehenderit nulla officia nulla ea exercitation laboris occaecat sint irure ipsum do. Occaecat anim ea voluptate non dolore duis. Id duis Lorem voluptate duis sint exercitation deserunt ut deserunt. Veniam amet duis dolor commodo. <span>Span inline for subtle highlight</span> Anim esse voluptate esse nisi dolor nulla. Ut enim elit nulla Lorem velit deserunt ea quis ea eiusmod deserunt velit.</p>
+        
+                    
+        
+                </div>
+            </td>
+                <td>
+                    <div class="panel">
+
+                        <style>
+                            .xs {font-size: 0.75rem;}
+                            .sm {font-size:0.875rem;}
+                            .md {font-size:1rem;}
+                            .lg {font-size:2.7rem;}
+                            .xl {font-size:3.6rem;}
+
+                            .normal{line-height: normal;}
+                            .none{line-height: 1;}
+                            .shorter{line-height: 1.25;}
+                            .short{line-height: 1.375;}
+                            .base{line-height: 1.5;}
+                            .tall{line-height: 1.625;}
+                            .taller{line-height: 2;}
+                    
+                            .tighter{letter-spacing:-0.05em ;}
+                            .tight {letter-spacing:-0.025em ;}
+                            .normal {letter-spacing: 0;}
+                            .wide {letter-spacing: 0.025em;}
+                            .wider{letter-spacing:0.05em ;}
+                            .widest {letter-spacing: 0.1em;}
+
+                        </style>
+                        <span class="xl none">Header 1 -<br> Lorem ipsum</span><br>
+                        <span class="lg">Header 2 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></span>
+                        <span class="">Header 3 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></span>
+                        <span class="">Header 4 - Lorem <span>ipsum</span><br><strong>Same typesetting as h3 - but span color variant <span>ipsum dolor</span></strong></span>
+                        <span class="">Header 5 - Lorem <span>ipsum</span><br><strong>Nisi mollit est irure aliquip <span>ipsum dolor</span></strong></span>
+                        <span class="">Header 6 - Lorem <span>ipsum</span><br><strong>Same typesetting as h5 - but span color variant  <span>ipsum dolor</span></strong></span>
+            
+                        <p><strong>Nisi mollit est irure</strong> aliquip ipsum dolor velit fugiat enim ad minim sit. <a href="/">inline link stying</a> Fugiat adipisicing veniam reprehenderit nulla officia nulla ea exercitation laboris occaecat sint irure ipsum do. Occaecat anim ea voluptate non dolore duis. Id duis Lorem voluptate duis sint exercitation deserunt ut deserunt. Veniam amet duis dolor commodo. <span>Span inline for subtle highlight</span> Anim esse voluptate esse nisi dolor nulla. Ut enim elit nulla Lorem velit deserunt ea quis ea eiusmod deserunt velit.</p>
+   
+                        
+            
+                    </div>
+                </td>
+            </tr>
+        </table>
+		
+
+	</main>
+	
+</body>
+</html>

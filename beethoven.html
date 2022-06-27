@@ -157,7 +157,7 @@
 
 
 		div.prNav {
-			height:20vh;
+			height:5vh;
 			background-image: linear-gradient(to bottom, 
 			var(--base-dk_20) 0%, 
 			var(--base-dk_0) 20%, 
@@ -357,10 +357,127 @@
 </head>
 
 <body class="spookyTown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	<div class="radialSpot">
 			<div class="prNav">
 				nav 
 			</div>
+
+
+
+
+
+
+
+
+
+			<style>
+				.stageContainer {
+					position: relative;
+				}
+				.stageHeight {
+					height: 45vh;
+				}
+				p.message::after {
+						content: 'small screen - banner height 45vh';
+						color: yellow;
+					}
+				/* tablet like  */
+				@media screen and (min-height:800px) and (min-width:1200px) {
+					.stageHeight {
+						height: 65vh;
+					}
+					p.message::after {
+						content: 'typical laptop - banner height 65vh';
+						color: red;
+					}
+				}
+				/* super large screen control height */
+				@media screen and (min-height:1000px) and (min-width:2000px) {
+					.stageHeight {
+						height: 55vh;
+					}
+					p.message::after {
+						content: 'large screen - contain banner again - height 55vh';
+						color:green;
+					}
+				}
+				.bgLayer {
+					z-index:300;
+					background-image: url(/images/masthead/madstbg.png);
+					background-repeat: no-repeat;
+					/* background-position: center 60%; */
+					background-position: center 100%;
+					background-size: contain;
+				}
+				.stageItems {
+					z-index:500;
+					position: absolute;
+					top:0;
+					width: 100%;
+					background-image: radial-gradient(circle at center, var(--base-dk_0) 55%, var(--base-dk_20) 70%,  var(--base-dk_100) 150%);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+				div.item {
+					padding-left: 5vw;
+					padding-right: 5vw;
+				}
+			</style>
+
+
+			<div class="stageContainer">
+				<div class="bgLayer stageHeight">&nbsp;</div>
+
+				<div class="stageItems stageHeight">
+					<div class="item">
+						<p class="message">&nbsp;</p>
+						
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			<style>
 					div.swatches.base .box1 {background-color: var(--base_100);}
 					div.swatches.base .box2 {background-color: var(--base_50);}
